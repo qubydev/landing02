@@ -47,7 +47,7 @@ export default function Navbar() {
                         className="md:hidden"
                         onClick={() => setOpen(!open)}
                     >
-                        {open ? <IoClose className="h-6 w-6" /> : <HiMenu className="h-6 w-6" />}
+                        {open ? <IoClose className="h-8 w-8" /> : <HiMenu className="h-8 w-8" />}
                     </Button>
                 </nav>
 
