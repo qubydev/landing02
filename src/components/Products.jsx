@@ -10,7 +10,7 @@ const PRODUCTS = [
         popular: true,
         title: 'Premium Community',
         subtitle: 'A community to connect and learn with like-minded people.',
-        offer: 'Unlock bonus worth rs 75,199 including all future upgrades at zero cost',
+        offer: 'Unlock bonus worth ₹75,199 including all future upgrades at zero cost!',
         features: [
             { label: 'Wealth Mindset', desc: 'Learn how successful people think and make decisions', icon: FaBrain },
             { label: 'Power Principles', desc: 'Master the hidden laws of influence and success', icon: FaLightbulb },
@@ -18,7 +18,7 @@ const PRODUCTS = [
             { label: 'Community Access', desc: 'Network with like-minded individuals', icon: FaUsers },
         ],
         originalPrice: '₹31,597',
-        price: '₹699',
+        price: '₹799',
     },
     {
         popular: false,

@@ -1,14 +1,15 @@
 import React from 'react'
 import GradientText from './ui/custom/gradient-text'
 import { Marquee } from './ui/marquee'
-import { FaDiscord, FaGithub, FaLinkedin, FaReddit, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedin, FaReddit, FaTelegram, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 
 const SOCIALS = [
     { name: 'Discord', url: 'https://discord.com', icon: <FaDiscord size={38} className="text-[#5865F2]" /> },
-    { name: 'Twitter', url: 'https://twitter.com', icon: <FaTwitter size={38} className="text-[#1DA1F2]" /> },
+    { name: 'X', url: 'https://x.com', icon: <FaXTwitter size={38} className="text-[#ffffff]" /> },
+    { name: 'Telegram', url: 'https://telegram.org', icon: <FaTelegram size={38} className="text-[#0088cc]" /> },
     { name: 'LinkedIn', url: 'https://linkedin.com', icon: <FaLinkedin size={38} className="text-[#0A66C2]" /> },
-    { name: 'GitHub', url: 'https://github.com', icon: <FaGithub size={38} className="text-[#FFFFFF]" /> },
     { name: 'WhatsApp', url: 'https://whatsapp.com', icon: <FaWhatsapp size={38} className="text-[#25D366]" /> },
     { name: 'Reddit', url: 'https://reddit.com', icon: <FaReddit size={38} className="text-[#FF4500]" /> },
 ];
@@ -37,20 +38,22 @@ export default function Intro() {
             <div className='flex flex-col items-center justify-center'>
                 <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2">
                     <Avatar className={"size-10"}>
-                        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                        <AvatarImage
+                            src="/pfp1.png"
+                            alt="Pfp 1" />
                         <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     <Avatar className={"size-10"}>
                         <AvatarImage
-                            src="https://github.com/maxleiter.png"
-                            alt="@maxleiter"
+                            src="/pfp3.png"
+                            alt="Pfp 3"
                         />
                         <AvatarFallback>LR</AvatarFallback>
                     </Avatar>
                     <Avatar className={"size-10"}>
                         <AvatarImage
-                            src="https://github.com/evilrabbit.png"
-                            alt="@evilrabbit"
+                            src="/pfp2.png"
+                            alt="Pfp 2"
                         />
                         <AvatarFallback>ER</AvatarFallback>
                     </Avatar>
