@@ -5,6 +5,7 @@ import { Marquee } from "@/components/ui/marquee"
 import { Button } from './ui/button'
 import GradientText from './ui/custom/gradient-text'
 import ShootingStars from './ui/shooting-stars'
+import { FancyButton } from './ui/custom/fancy-button'
 
 export default function Hero() {
     return (
@@ -72,7 +73,7 @@ export default function Hero() {
                             <span>From learning to Earning!</span>
                         </p>
                         <Link to="/join">
-                            <Button size="lg" className={"rounded-full text-lg px-12 md:px-20 py-6"}>Join Now</Button>
+                            <FancyButton className={"rounded-full text-lg px-12 md:px-20 py-3"}>Join Now</FancyButton>
                         </Link>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import GradientText from './ui/custom/gradient-text'
 import DecorativeLine from './ui/custom/decorative-line'
 import { Button } from './ui/button'
 import { FaBrain, FaLightbulb, FaRoad, FaUsers } from 'react-icons/fa'
+import { FancyButton } from './ui/custom/fancy-button'
 
 const PRODUCTS = [
     {
@@ -76,11 +77,10 @@ export default function Products() {
                     {PRODUCTS.map((product, index) => (
                         <div
                             key={index}
-                            className={`relative flex flex-col p-8 rounded-2xl border max-w-sm w-full ${
-                                product.popular
-                                    ? 'border-primary bg-primary/5'
-                                    : 'border-foreground/20 bg-card'
-                            }`}
+                            className={`relative flex flex-col p-8 rounded-2xl border max-w-sm w-full ${product.popular
+                                ? 'border-primary bg-primary/5'
+                                : 'border-foreground/20 bg-card'
+                                }`}
                         >
                             {product.popular && (
                                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -138,17 +138,19 @@ export default function Products() {
                             </div>
 
                             <Link to="/join" className="w-full">
-                                <Button
-                                    size="lg"
-                                    className={`w-full rounded-full font-semibold ${
-                                        product.popular
-                                            ? ''
-                                            : 'bg-foreground/10 hover:bg-foreground/20 text-foreground'
-                                    }`}
-                                    variant={product.popular ? 'default' : 'ghost'}
-                                >
-                                    JOIN NOW
-                                </Button>
+                                {product.popular ? (
+                                    <FancyButton className="w-full rounded-full font-semibold py-3">
+                                        JOIN NOW
+                                    </FancyButton>
+                                ) : (
+                                    <Button
+                                        size="xl"
+                                        className="w-full rounded-full font-semibold bg-foreground/10 hover:bg-foreground/20 text-foreground"
+                                        variant="ghost"
+                                    >
+                                        JOIN NOW
+                                    </Button>
+                                )}
                             </Link>
                         </div>
                     ))}

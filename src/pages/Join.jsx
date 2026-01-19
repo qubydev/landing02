@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import { FancyButton } from '@/components/ui/custom/fancy-button';
 
 export default function Join() {
     const [showQrPopup, setShowQrPopup] = useState(false);
@@ -63,12 +64,12 @@ export default function Join() {
                         </div>
                     </div>
 
-                    <Button
+                    <FancyButton
                         size="lg"
-                        className="w-full rounded-full font-semibold py-5"
+                        className="w-full rounded-full font-semibold py-4"
                     >
                         Continue to Payment
-                    </Button>
+                    </FancyButton>
 
                     <p className="text-center text-muted-foreground text-sm mt-2">
                         If you have already paid, click continue
