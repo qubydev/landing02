@@ -2,6 +2,7 @@ import React from 'react';
 import GradientText from './ui/custom/gradient-text';
 import DecorativeLine from './ui/custom/decorative-line';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
+import { Marquee } from './ui/marquee';
 
 const REVIEWS = [
     // Column 1
@@ -83,25 +84,28 @@ function StarRating({ rating }) {
     );
 }
 
+
+
 export default function Reviews() {
     return (
         <section className="relative text-foreground p-4 py-16">
 
-            <div className="mx-auto max-w-6xl">
-                <div className='flex flex-col items-center justify-center'>
-                    <h3 className='text-2xl md:text-4xl font-bold mb-4'>
-                        our{" "}
-                        <GradientText
-                            text="REVIEWS"
-                            className="font-bold"
-                            gradient="linear-gradient(90deg,var(--color-primary) 39%, #ffffff 49%, var(--color-primary) 58%)"
-                        />
-                    </h3>
-                    <DecorativeLine />
-                </div>
+            <div className='flex flex-col items-center justify-center'>
+                <h3 className='text-2xl md:text-4xl font-bold mb-4'>
+                    our{" "}
+                    <GradientText
+                        text="REVIEWS"
+                        className="font-bold"
+                        gradient="linear-gradient(90deg,var(--color-primary) 39%, #ffffff 49%, var(--color-primary) 58%)"
+                    />
+                </h3>
+                <DecorativeLine />
+            </div>
 
-                <div className='flex flex-col md:flex-row justify-center items-center md:items-start gap-4 mt-10'>
-                    <div className='flex flex-col gap-4 lg:relative lg:top-8'>
+            <div className='relative'>
+                <div className='flex items-center justify-center h-140 overflow-hidden mt-20'>
+
+                    <Marquee vertical className={"p-2 hidden min-[1064px]:flex"}>
                         {REVIEWS[0].map((review, index) => (
                             <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
@@ -111,17 +115,14 @@ export default function Reviews() {
                                         <AvatarImage src={review.imageUrl} alt={review.name} />
                                         <AvatarFallback>{initialsFromName(review.name)}</AvatarFallback>
                                     </Avatar>
-                                    <div className='flex flex-col'>
-                                        <span className='text-primary'>{review.name}</span>
-                                        <span className='text-xs text-foreground/80'>{review.role}</span>
-                                    </div>
                                 </div>
                                 <StarRating rating={review.rating} />
                                 <p className='text-sm text-foreground/70 mt-3'>{review.quote}</p>
                             </div>
                         ))}
-                    </div>
-                    <div className='flex flex-col gap-4'>
+                    </Marquee>
+
+                    <Marquee vertical reverse className={"p-2"}>
                         {REVIEWS[1].map((review, index) => (
                             <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
@@ -131,17 +132,14 @@ export default function Reviews() {
                                         <AvatarImage src={review.imageUrl} alt={review.name} />
                                         <AvatarFallback>{initialsFromName(review.name)}</AvatarFallback>
                                     </Avatar>
-                                    <div className='flex flex-col'>
-                                        <span className='text-primary'>{review.name}</span>
-                                        <span className='text-xs text-foreground/80'>{review.role}</span>
-                                    </div>
                                 </div>
                                 <StarRating rating={review.rating} />
                                 <p className='text-sm text-foreground/70 mt-3'>{review.quote}</p>
                             </div>
                         ))}
-                    </div>
-                    <div className='hidden lg:flex flex-col gap-4 lg:relative lg:top-8'>
+                    </Marquee>
+
+                    <Marquee vertical className={"p-2 hidden min-[760px]:flex"}>
                         {REVIEWS[2].map((review, index) => (
                             <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
@@ -151,21 +149,19 @@ export default function Reviews() {
                                         <AvatarImage src={review.imageUrl} alt={review.name} />
                                         <AvatarFallback>{initialsFromName(review.name)}</AvatarFallback>
                                     </Avatar>
-                                    <div className='flex flex-col'>
-                                        <span className='text-primary'>{review.name}</span>
-                                        <span className='text-xs text-foreground/80'>{review.role}</span>
-                                    </div>
                                 </div>
                                 <StarRating rating={review.rating} />
                                 <p className='text-sm text-foreground/70 mt-3'>{review.quote}</p>
                             </div>
                         ))}
-                    </div>
+                    </Marquee>
+
                 </div>
 
-                {/* Bottom fade-out gradient */}
-                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-52 bg-gradient-to-t from-[#040005] to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none bg-gradient-to-t from-[#040005] to-transparent z-10" />
+                <div className="absolute top-0 left-0 right-0 h-24 pointer-events-none bg-gradient-to-b from-[#040005] to-transparent z-10" />
             </div>
+
         </section>
     );
 }
