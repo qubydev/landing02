@@ -105,7 +105,7 @@ export default function Reviews() {
             <div className='relative'>
                 <div className='flex items-center justify-center h-140 overflow-hidden mt-20'>
 
-                    <Marquee vertical className={"p-2 hidden min-[1064px]:flex"}>
+                    <Marquee vertical pauseOnHover className={"p-2 hidden min-[1064px]:flex [--duration:10s]"}>
                         {REVIEWS[0].map((review, index) => (
                             <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
@@ -115,6 +115,10 @@ export default function Reviews() {
                                         <AvatarImage src={review.imageUrl} alt={review.name} />
                                         <AvatarFallback>{initialsFromName(review.name)}</AvatarFallback>
                                     </Avatar>
+                                    <div>
+                                        <p className='text-foreground font-medium'>{review.name}</p>
+                                        <p className='text-foreground/70 text-sm'>{review.role}</p>
+                                    </div>
                                 </div>
                                 <StarRating rating={review.rating} />
                                 <p className='text-sm text-foreground/70 mt-3'>{review.quote}</p>
@@ -122,7 +126,7 @@ export default function Reviews() {
                         ))}
                     </Marquee>
 
-                    <Marquee vertical reverse className={"p-2"}>
+                    <Marquee vertical pauseOnHover reverse className={"p-2 [--duration:10s]"}>
                         {REVIEWS[1].map((review, index) => (
                             <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
@@ -132,6 +136,10 @@ export default function Reviews() {
                                         <AvatarImage src={review.imageUrl} alt={review.name} />
                                         <AvatarFallback>{initialsFromName(review.name)}</AvatarFallback>
                                     </Avatar>
+                                    <div>
+                                        <p className='text-foreground font-medium'>{review.name}</p>
+                                        <p className='text-foreground/70 text-sm'>{review.role}</p>
+                                    </div>
                                 </div>
                                 <StarRating rating={review.rating} />
                                 <p className='text-sm text-foreground/70 mt-3'>{review.quote}</p>
@@ -139,7 +147,7 @@ export default function Reviews() {
                         ))}
                     </Marquee>
 
-                    <Marquee vertical className={"p-2 hidden min-[760px]:flex"}>
+                    <Marquee vertical pauseOnHover className={"p-2 hidden min-[760px]:flex [--duration:10s]"}>
                         {REVIEWS[2].map((review, index) => (
                             <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
@@ -149,6 +157,10 @@ export default function Reviews() {
                                         <AvatarImage src={review.imageUrl} alt={review.name} />
                                         <AvatarFallback>{initialsFromName(review.name)}</AvatarFallback>
                                     </Avatar>
+                                    <div>
+                                        <p className='text-foreground font-medium'>{review.name}</p>
+                                        <p className='text-foreground/70 text-sm'>{review.role}</p>
+                                    </div>
                                 </div>
                                 <StarRating rating={review.rating} />
                                 <p className='text-sm text-foreground/70 mt-3'>{review.quote}</p>
