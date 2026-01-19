@@ -8,7 +8,7 @@ import ShootingStars from './ui/shooting-stars'
 export default function Hero() {
     return (
         <div
-            className='min-h-screen bg-cover bg-center bg-no-repeat relative before:absolute before:inset-0 before:bg-[url(/hero-bg.svg)] before:bg-cover before:bg-center before:bg-no-repeat before:z-[5]'
+            className="min-h-screen bg-cover bg-center bg-no-repeat relative before:absolute before:inset-0 before:bg-[url(/hero-bg.svg)] before:bg-cover before:bg-center before:bg-no-repeat before:filter before:brightness-60 before:z-5"
         >
             <ShootingStars count={30} />
             <div className='px-3 pt-28 pb-10 relative z-10'>
@@ -23,7 +23,7 @@ export default function Hero() {
                     </AnimatedShinyText>
                 </div>
                 <div className='flex items-center justify-center flex-col'>
-                    <div className='text-center'>
+                    <div className='text-center md:text-left'>
                         <p className='text-xl md:text-3xl font-playfair italic text-foreground/80 font-bold tracking-tight'>not just a</p>
                         <GradientText
                             text="Money Making Course"
@@ -31,9 +31,9 @@ export default function Hero() {
                             gradient="linear-gradient(90deg,var(--color-primary) 39%, #ffffff 49%, var(--color-primary) 58%)"
                         />
                     </div>
-                    <div className='px-10'>
+                    <div className='overflow-hidden'>
                         <Marquee
-                            className={"max-w-6xl [--duration:20s] mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"}
+                            className={"w-[calc(100vw-2rem)] max-w-6xl overflow-hidden [--duration:20s] mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"}
                         >
                             <video
                                 src="https://framerusercontent.com/assets/JHCNXz7Yiw1dZCLylVK8ZX1ncQo.mp4"
@@ -81,8 +81,8 @@ export default function Hero() {
                     </div>
                     <div className='py-6 flex flex-col items-center justify-center gap-6'>
                         <p className='flex items-center justify-center flex-col text-foreground/80 text-center text-sm md:text-base'>
-                            <span>Teaching my 7 years of experience in 3 months!</span>
-                            <span>Wealth has a language, it’s time you learned to speak it.</span>
+                            <span>This is where knowledge meets execution.</span>
+                            <span>From learning to Earning!</span>
                         </p>
                         <Button size="lg" className={"rounded-full text-lg px-12 md:px-20 py-6"}>Join Now</Button>
                     </div>

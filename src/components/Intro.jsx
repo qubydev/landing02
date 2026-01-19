@@ -1,0 +1,81 @@
+import React from 'react'
+import GradientText from './ui/custom/gradient-text'
+import { Marquee } from './ui/marquee'
+import { FaDiscord, FaGithub, FaLinkedin, FaReddit, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
+
+const SOCIALS = [
+    { name: 'Discord', url: 'https://discord.com', icon: <FaDiscord size={38} className="text-[#5865F2]" /> },
+    { name: 'Twitter', url: 'https://twitter.com', icon: <FaTwitter size={38} className="text-[#1DA1F2]" /> },
+    { name: 'LinkedIn', url: 'https://linkedin.com', icon: <FaLinkedin size={38} className="text-[#0A66C2]" /> },
+    { name: 'GitHub', url: 'https://github.com', icon: <FaGithub size={38} className="text-[#FFFFFF]" /> },
+    { name: 'WhatsApp', url: 'https://whatsapp.com', icon: <FaWhatsapp size={38} className="text-[#25D366]" /> },
+    { name: 'Reddit', url: 'https://reddit.com', icon: <FaReddit size={38} className="text-[#FF4500]" /> },
+];
+
+export default function Intro() {
+    return (
+        <div className='p-4 py-42 flex items-center justify-center flex-col gap-10'>
+            <div className='flex flex-col items-center justify-center'>
+                <h3 className='text-foreground/80'>Teaching my</h3>
+                <h2 className='text-[34px] text-center'>
+                    <GradientText
+                        text="7 YEARS"
+                        className="font-bold"
+                        gradient="linear-gradient(90deg,var(--color-primary) 39%, #ffffff 49%, var(--color-primary) 58%)"
+                    />{" "}
+                    of experience in 3 months!
+                </h2>
+                <div className='text-center text-sm text-foreground/80'>
+                    <p>Wealth has a huge language, it's time you learn to speak it.</p>
+                    <p>The 1% don't chase money, they command it!</p>
+                </div>
+            </div>
+
+            <div className='flex flex-col items-center justify-center'>
+                <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2">
+                    <Avatar className={"size-10"}>
+                        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <Avatar className={"size-10"}>
+                        <AvatarImage
+                            src="https://github.com/maxleiter.png"
+                            alt="@maxleiter"
+                        />
+                        <AvatarFallback>LR</AvatarFallback>
+                    </Avatar>
+                    <Avatar className={"size-10"}>
+                        <AvatarImage
+                            src="https://github.com/evilrabbit.png"
+                            alt="@evilrabbit"
+                        />
+                        <AvatarFallback>ER</AvatarFallback>
+                    </Avatar>
+                </div>
+                <p className='text-center font-bold text-lg mt-2'>
+                    <span>150+</span>{" "}
+                    <span className='text-foreground/70'>Trusted members</span>
+                </p>
+            </div>
+
+            <div>
+                <h3 className='mb-2 text-foreground/70'>
+                    Featured On
+                </h3>
+                <div className="relative w-[90vw] max-w-xl rounded-lg overflow-hidden">
+                    <Marquee className="overflow-hidden [--duration:10s]">
+                        {SOCIALS.map((social) => (
+                            <div className="border px-10 py-6 rounded-[1.25rem] bg-[linear-gradient(135deg,#2C3441_0%,#1B2232_100%)] shadow-md">
+                                {social.icon}
+                            </div>
+                        ))}
+                    </Marquee>
+
+                    <div className="pointer-events-none absolute inset-y-0 left-0 w-22 bg-gradient-to-r from-[#1E2A3B] to-transparent" />
+                    <div className="pointer-events-none absolute inset-y-0 right-0 w-22 bg-gradient-to-l from-[#1E2A3B] to-transparent" />
+                </div>
+            </div>
+        </div>
+    )
+}
