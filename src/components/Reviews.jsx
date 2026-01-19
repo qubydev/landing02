@@ -103,7 +103,7 @@ export default function Reviews() {
                 <div className='flex flex-col md:flex-row justify-center items-center md:items-start gap-4 mt-10'>
                     <div className='flex flex-col gap-4 lg:relative lg:top-8'>
                         {REVIEWS[0].map((review, index) => (
-                            <div key={index} className='p-6 border max-w-72 rounded-xl bg-card'>
+                            <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
                                     <Avatar
                                         className={"size-10"}
@@ -123,7 +123,7 @@ export default function Reviews() {
                     </div>
                     <div className='flex flex-col gap-4'>
                         {REVIEWS[1].map((review, index) => (
-                            <div key={index} className='p-6 border max-w-72 rounded-xl bg-card'>
+                            <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
                                     <Avatar
                                         className={"size-10"}
@@ -143,7 +143,7 @@ export default function Reviews() {
                     </div>
                     <div className='hidden lg:flex flex-col gap-4 lg:relative lg:top-8'>
                         {REVIEWS[2].map((review, index) => (
-                            <div key={index} className='p-6 border max-w-72 rounded-xl bg-card'>
+                            <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
                                     <Avatar
                                         className={"size-10"}

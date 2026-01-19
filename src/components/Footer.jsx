@@ -1,20 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaInstagram, FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa'
+import { FaInstagram, FaTwitter, FaYoutube, FaLinkedin, FaTelegram } from 'react-icons/fa'
 
 export default function Footer() {
     const navLinks = [
         { href: "#about", label: "About Us" },
         { href: "#testimonials", label: "Testimonials" },
         { href: "#reviews", label: "Reviews" },
-        { href: "#contact", label: "Contact" },
     ]
 
     const socialLinks = [
         { href: "https://instagram.com", icon: FaInstagram, label: "Instagram" },
         { href: "https://twitter.com", icon: FaTwitter, label: "Twitter" },
-        { href: "https://youtube.com", icon: FaYoutube, label: "YouTube" },
         { href: "https://linkedin.com", icon: FaLinkedin, label: "LinkedIn" },
+        { href: "https://t.me/theprimeascend", icon: FaTelegram, label: "Telegram" },
     ]
 
     return (
