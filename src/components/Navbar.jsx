@@ -9,9 +9,9 @@ export default function Navbar() {
 
     const navLinks = [
         { to: "#about", label: "About Us" },
-        { to: "#products", label: "Products" },
         { to: "#testimonials", label: "Testimonials" },
         { to: "#reviews", label: "Reviews" },
+        { to: "#products", label: "Products" },
     ]
 
     const handleNavClick = (e, to) => {
@@ -28,7 +28,7 @@ export default function Navbar() {
             <div className='flex-1 max-w-5xl'>
                 <nav className='flex items-center justify-between rounded-2xl bg-background/5 backdrop-blur-md border py-2 pl-6 pr-3'>
                     <Link to="/">
-                        <h1 className='font-bold text-lg'>The Wealth Speaks</h1>
+                        <h1 className='font-bold text-lg text-primary'>The Wealth Speaks</h1>
                     </Link>
 
                     {/* Desktop Navigation */}

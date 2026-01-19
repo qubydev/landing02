@@ -4,10 +4,10 @@ import { FaInstagram, FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa'
 
 export default function Footer() {
     const navLinks = [
-        { to: "/about", label: "About Us" },
-        { to: "/testimonials", label: "Testimonials" },
-        { to: "/reviews", label: "Reviews" },
-        { to: "/contact", label: "Contact" },
+        { href: "#about", label: "About Us" },
+        { href: "#testimonials", label: "Testimonials" },
+        { href: "#reviews", label: "Reviews" },
+        { href: "#contact", label: "Contact" },
     ]
 
     const socialLinks = [
@@ -24,10 +24,10 @@ export default function Footer() {
                     {/* Logo & Company Name */}
                     <div className="flex flex-col items-center md:items-start gap-3">
                         <Link to="/" className="flex items-center gap-3">
-                            <img 
-                                src="/vite.svg" 
-                                alt="The Wealth Speaks Logo" 
-                                className="size-10"
+                            <img
+                                src="/logo.png"
+                                alt="The Wealth Speaks Logo"
+                                className="size-10 rounded-full"
                             />
                             <span className="font-bold text-xl text-foreground">The Wealth Speaks</span>
                         </Link>
@@ -41,13 +41,13 @@ export default function Footer() {
                         <h4 className="font-semibold text-foreground">Quick Links</h4>
                         <div className="flex flex-col items-center md:items-start gap-2">
                             {navLinks.map((link) => (
-                                <Link
-                                    key={link.to}
-                                    to={link.to}
+                                <a
+                                    key={link.href}
+                                    href={link.href}
                                     className="text-foreground/60 hover:text-foreground transition text-sm"
                                 >
                                     {link.label}
-                                </Link>
+                                </a>
                             ))}
                         </div>
                     </div>
@@ -78,10 +78,10 @@ export default function Footer() {
                         © {new Date().getFullYear()} The Wealth Speaks. All rights reserved.
                     </p>
                     <div className="flex items-center gap-6 text-sm text-foreground/50">
-                        <Link to="/privacy" className="hover:text-foreground transition">
+                        <Link to="#privacy" className="hover:text-foreground transition">
                             Privacy Policy
                         </Link>
-                        <Link to="/terms" className="hover:text-foreground transition">
+                        <Link to="#terms" className="hover:text-foreground transition">
                             Terms of Service
                         </Link>
                     </div>

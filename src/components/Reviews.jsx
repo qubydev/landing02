@@ -1,35 +1,60 @@
 import React from 'react';
 import GradientText from './ui/custom/gradient-text';
+import DecorativeLine from './ui/custom/decorative-line';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 
 const REVIEWS = [
-    {
-        company: 'Powersurge',
-        name: 'Nikolas Ogbona',
-        role: 'Product Designer',
-        quote:
-            "Untitled has been a lifesaver for our team — everything we need is right at our fingertips, and it keeps us jumping right into new design projects.",
-        imageUrl: 'https://example.com/image1.jpg',
-        rating: 5
-    },
-    {
-        company: 'Goodwell',
-        name: 'Amar Foley',
-        role: 'UX Designer',
-        quote:
-            "It’s the secret weapon for staying ahead of deadlines. It gives us everything we need to get started quickly.",
-        imageUrl: 'https://example.com/image2.jpg',
-        rating: 5
-    },
-    {
-        company: 'Stacked Lab',
-        name: 'Mathilde Lewis',
-        role: 'Project Lead',
-        quote:
-            "Our workflow has improved dramatically since we started using it. It’s easy to use, and the resources are top-notch. I recommend it to everyone.",
-        imageUrl: 'https://example.com/image3.jpg',
-        rating: 5
-    }
+    // Column 1
+    [
+        {
+            name: 'Anaya Das',
+            role: 'Business Owner',
+            quote:
+                "Joining this community was one of my smartest decisions. The focus on skills, power, and long-term wealth makes it very different from other platforms. It's practical, structured, and genuinely valuable.",
+            rating: 5
+        },
+        {
+            name: 'Pranay',
+            role: 'Member',
+            quote:
+                "This community changed the way I think about money. Clear, practical, and powerful.",
+            rating: 5
+        },
+    ],
+    // Column 2
+    [
+        {
+            name: 'Rahul',
+            role: 'Member',
+            quote:
+                "I finally understand how successful people think and make decisions.",
+            rating: 5
+        },
+        {
+            name: 'Aman',
+            role: 'Professional Coach',
+            quote:
+                "The way concepts are explained here is very different. You don't just learn what to do, you learn how successful people actually think. It has helped me improve both my financial planning and business mindset.",
+            rating: 5
+        },
+    ],
+    // Column 3
+    [
+        {
+            name: 'Deepika',
+            role: 'Member',
+            quote:
+                "No hype, no shortcuts. Just real skills that actually make sense.",
+            rating: 5
+        },
+        {
+            name: 'Rohit',
+            role: 'Designer',
+            quote:
+                "This community completely changed my perspective on money and decision-making. The sessions are structured, practical, and far beyond basic finance content. I now think more clearly about skills, income, and long-term growth.",
+            rating: 5
+        },
+    ],
 ];
 
 function initialsFromName(name) {
@@ -63,20 +88,21 @@ export default function Reviews() {
         <section className="relative text-foreground p-4 py-16">
 
             <div className="mx-auto max-w-6xl">
-                <div className='flex items-center justify-center'>
-                    <h3 className='text-3xl font-bold mb-4'>
-                        Our{" "}
+                <div className='flex flex-col items-center justify-center'>
+                    <h3 className='text-2xl md:text-4xl font-bold mb-4'>
+                        our{" "}
                         <GradientText
                             text="REVIEWS"
                             className="font-bold"
                             gradient="linear-gradient(90deg,var(--color-primary) 39%, #ffffff 49%, var(--color-primary) 58%)"
                         />
                     </h3>
+                    <DecorativeLine />
                 </div>
 
-                <div className='flex items-center justify-center flex-wrap gap-4 mt-10'>
-                    <div className='flex flex-col gap-4 relative top-8'>
-                        {REVIEWS.map((review, index) => (
+                <div className='flex flex-col md:flex-row justify-center items-center md:items-start gap-4 mt-10'>
+                    <div className='flex flex-col gap-4 lg:relative lg:top-8'>
+                        {REVIEWS[0].map((review, index) => (
                             <div key={index} className='p-6 border max-w-72 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
                                     <Avatar
@@ -87,7 +113,7 @@ export default function Reviews() {
                                     </Avatar>
                                     <div className='flex flex-col'>
                                         <span className='text-primary'>{review.name}</span>
-                                        <span className='text-xs text-foreground/80'>{review.company}</span>
+                                        <span className='text-xs text-foreground/80'>{review.role}</span>
                                     </div>
                                 </div>
                                 <StarRating rating={review.rating} />
@@ -96,7 +122,7 @@ export default function Reviews() {
                         ))}
                     </div>
                     <div className='flex flex-col gap-4'>
-                        {REVIEWS.map((review, index) => (
+                        {REVIEWS[1].map((review, index) => (
                             <div key={index} className='p-6 border max-w-72 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
                                     <Avatar
@@ -107,7 +133,7 @@ export default function Reviews() {
                                     </Avatar>
                                     <div className='flex flex-col'>
                                         <span className='text-primary'>{review.name}</span>
-                                        <span className='text-xs text-foreground/80'>{review.company}</span>
+                                        <span className='text-xs text-foreground/80'>{review.role}</span>
                                     </div>
                                 </div>
                                 <StarRating rating={review.rating} />
@@ -115,8 +141,8 @@ export default function Reviews() {
                             </div>
                         ))}
                     </div>
-                    <div className='flex flex-col gap-4 relative top-8'>
-                        {REVIEWS.map((review, index) => (
+                    <div className='hidden lg:flex flex-col gap-4 lg:relative lg:top-8'>
+                        {REVIEWS[2].map((review, index) => (
                             <div key={index} className='p-6 border max-w-72 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
                                     <Avatar
@@ -127,7 +153,7 @@ export default function Reviews() {
                                     </Avatar>
                                     <div className='flex flex-col'>
                                         <span className='text-primary'>{review.name}</span>
-                                        <span className='text-xs text-foreground/80'>{review.company}</span>
+                                        <span className='text-xs text-foreground/80'>{review.role}</span>
                                     </div>
                                 </div>
                                 <StarRating rating={review.rating} />
@@ -138,7 +164,7 @@ export default function Reviews() {
                 </div>
 
                 {/* Bottom fade-out gradient */}
-                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-42 bg-gradient-to-t from-[#040005] to-transparent" />
+                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-52 bg-gradient-to-t from-[#040005] to-transparent" />
             </div>
         </section>
     );

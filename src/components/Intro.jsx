@@ -18,13 +18,15 @@ export default function Intro() {
         <div className='p-4 py-16 flex items-center justify-center flex-col gap-4'>
             <div className='flex flex-col items-center justify-center'>
                 <h3 className='text-foreground/80'>Teaching my</h3>
-                <h2 className='text-[34px] text-center'>
-                    <GradientText
-                        text="7 YEARS"
-                        className="font-bold"
-                        gradient="linear-gradient(90deg,var(--color-primary) 39%, #ffffff 49%, var(--color-primary) 58%)"
-                    />{" "}
-                    of experience in 3 months!
+                <h2 className='text-2xl md:text-4xl text-center mb-2 flex items-center justify-center flex-wrap px-4 font-bold'>
+                    <span>
+                        <GradientText
+                            text="7 YEARS"
+                            className="font-bold"
+                            gradient="linear-gradient(90deg,var(--color-primary) 39%, #ffffff 49%, var(--color-primary) 58%)"
+                        />{" of experience"}
+                    </span>
+                    <span>in 3 months!</span>
                 </h2>
                 <div className='text-center text-sm text-foreground/80'>
                     <p>Wealth has a huge language, it's time you learn to speak it.</p>
@@ -54,15 +56,12 @@ export default function Intro() {
                     </Avatar>
                 </div>
                 <p className='text-center font-bold text-lg mt-2'>
-                    <span>150+</span>{" "}
+                    <span className='text-primary'>150+</span>{" "}
                     <span className='text-foreground/70'>Trusted members</span>
                 </p>
             </div>
 
             <div>
-                <h3 className='mb-2 text-foreground/70'>
-                    Featured On
-                </h3>
                 <div className="relative w-[90vw] max-w-xl rounded-lg overflow-hidden">
                     <Marquee className="overflow-hidden [--duration:10s]">
                         {SOCIALS.map((social) => (
@@ -72,8 +71,8 @@ export default function Intro() {
                         ))}
                     </Marquee>
 
-                    <div className="pointer-events-none absolute inset-y-0 left-0 w-22 bg-gradient-to-r from-[#1E2A3B] to-transparent" />
-                    <div className="pointer-events-none absolute inset-y-0 right-0 w-22 bg-gradient-to-l from-[#1E2A3B] to-transparent" />
+                    <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#040005] to-transparent" />
+                    <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#040005] to-transparent" />
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@ export default function Hero() {
                 <div className='flex items-center justify-center pt-8 md:pt-16 pb-4'>
                     <AnimatedShinyText className={"border border-primary/20 rounded-full p-1.5 py-1 flex items-center gap-2 text-sm shadow-[inset_0px_0px_100px_0px_rgba(112,174,255,0.05)]"}>
                         <img
-                            src="https://framerusercontent.com/images/chMiBiNWWenWlFd9CBjehYIBdw.png?width=176&height=176"
+                            src="/logo.png"
                             alt="Tharun Speaks Logo"
                             className="size-6 rounded-full"
                         />
@@ -37,42 +37,28 @@ export default function Hero() {
                             className={"w-[calc(100vw-2rem)] max-w-6xl overflow-hidden [--duration:20s] mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"}
                         >
                             <video
-                                src="https://framerusercontent.com/assets/JHCNXz7Yiw1dZCLylVK8ZX1ncQo.mp4"
+                                src="/clip1.mp4"
                                 autoPlay
                                 loop
                                 muted
                                 className="h-28 md:h-40 shadow-lg border border-white/10"
                             />
                             <video
-                                src="https://framerusercontent.com/assets/Em8WiqsudYP5xaIpE5iIh0yhSM.mp4"
+                                src="/clip2.mp4"
                                 autoPlay
                                 loop
                                 muted
                                 className="h-28 md:h-40 shadow-lg border border-white/10"
                             />
                             <video
-                                src="https://framerusercontent.com/assets/X02Yg7Po2jNk7YjQ8hrKFHCsPRE.mp4"
+                                src="/clip3.mp4"
                                 autoPlay
                                 loop
                                 muted
                                 className="h-28 md:h-40 shadow-lg border border-white/10"
                             />
                             <video
-                                src="https://framerusercontent.com/assets/JHCNXz7Yiw1dZCLylVK8ZX1ncQo.mp4"
-                                autoPlay
-                                loop
-                                muted
-                                className="h-28 md:h-40 shadow-lg border border-white/10"
-                            />
-                            <video
-                                src="https://framerusercontent.com/assets/Em8WiqsudYP5xaIpE5iIh0yhSM.mp4"
-                                autoPlay
-                                loop
-                                muted
-                                className="h-28 md:h-40 shadow-lg border border-white/10"
-                            />
-                            <video
-                                src="https://framerusercontent.com/assets/X02Yg7Po2jNk7YjQ8hrKFHCsPRE.mp4"
+                                src="/clip4.mp4"
                                 autoPlay
                                 loop
                                 muted
