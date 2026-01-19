@@ -66,7 +66,7 @@ export default function Intro() {
                 <div className="relative w-[90vw] max-w-xl rounded-lg overflow-hidden">
                     <Marquee className="overflow-hidden [--duration:10s]">
                         {SOCIALS.map((social) => (
-                            <div className="border px-10 py-6 rounded-[1.25rem] bg-[linear-gradient(135deg,#2C3441_0%,#1B2232_100%)] shadow-md">
+                            <div key={social.name} className="border px-10 py-6 rounded-[1.25rem] bg-[linear-gradient(135deg,#2C3441_0%,#1B2232_100%)] shadow-md">
                                 {social.icon}
                             </div>
                         ))}

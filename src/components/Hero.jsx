@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
 import { Marquee } from "@/components/ui/marquee"
 import { Button } from './ui/button'
@@ -8,10 +9,10 @@ import ShootingStars from './ui/shooting-stars'
 export default function Hero() {
     return (
         <div
-            className="min-h-screen bg-cover bg-center bg-no-repeat relative before:absolute before:inset-0 before:bg-[url(/hero-bg.svg)] before:bg-cover before:bg-center before:bg-no-repeat before:filter before:brightness-60 before:z-5"
+            className="bg-cover bg-center bg-no-repeat relative before:absolute before:inset-0 before:bg-[url(/hero-bg.svg)] before:bg-cover before:bg-center before:bg-no-repeat before:filter before:brightness-60 before:z-5"
         >
             <ShootingStars count={30} />
-            <div className='px-3 pt-28 pb-10 relative z-10'>
+            <div className='p-4 pt-28 pb-16 relative z-10'>
                 <div className='flex items-center justify-center pt-8 md:pt-16 pb-4'>
                     <AnimatedShinyText className={"border border-primary/20 rounded-full p-1.5 py-1 flex items-center gap-2 text-sm shadow-[inset_0px_0px_100px_0px_rgba(112,174,255,0.05)]"}>
                         <img
@@ -84,7 +85,9 @@ export default function Hero() {
                             <span>This is where knowledge meets execution.</span>
                             <span>From learning to Earning!</span>
                         </p>
-                        <Button size="lg" className={"rounded-full text-lg px-12 md:px-20 py-6"}>Join Now</Button>
+                        <Link to="/join">
+                            <Button size="lg" className={"rounded-full text-lg px-12 md:px-20 py-6"}>Join Now</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

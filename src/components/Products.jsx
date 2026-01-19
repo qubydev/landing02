@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import GradientText from './ui/custom/gradient-text';
 import { Button } from './ui/button';
 import { FaCheck } from 'react-icons/fa';
@@ -117,17 +118,19 @@ export default function Products() {
                             </div>
 
                             {/* CTA Button */}
-                            <Button
-                                size="lg"
-                                className={`w-full rounded-full font-semibold ${
-                                    product.popular
-                                        ? ''
-                                        : 'bg-foreground/10 hover:bg-foreground/20 text-foreground'
-                                }`}
-                                variant={product.popular ? 'default' : 'ghost'}
-                            >
-                                JOIN NOW
-                            </Button>
+                            <Link to="/join" className="w-full">
+                                <Button
+                                    size="lg"
+                                    className={`w-full rounded-full font-semibold ${
+                                        product.popular
+                                            ? ''
+                                            : 'bg-foreground/10 hover:bg-foreground/20 text-foreground'
+                                    }`}
+                                    variant={product.popular ? 'default' : 'ghost'}
+                                >
+                                    JOIN NOW
+                                </Button>
+                            </Link>
                         </div>
                     ))}
                 </div>

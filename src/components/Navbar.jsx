@@ -46,9 +46,11 @@ export default function Navbar() {
                     </div>
 
                     {/* Desktop Button */}
-                    <Button size='lg' className={"rounded-full hidden md:flex"}>
-                        Join Now
-                    </Button>
+                    <Link to="/join">
+                        <Button size='lg' className={"rounded-full hidden md:flex"}>
+                            Join Now
+                        </Button>
+                    </Link>
 
                     <button
                         className="md:hidden p-2 rounded-md hover:bg-background/10 transition"
@@ -72,9 +74,11 @@ export default function Navbar() {
                                     {link.label}
                                 </a>
                             ))}
-                            <Button size='lg' className={"rounded-full mt-2 w-full"} onClick={() => setOpen(false)}>
-                                Join Now
-                            </Button>
+                            <Link to="/join" className="w-full">
+                                <Button size='lg' className={"rounded-full mt-2 w-full"} onClick={() => setOpen(false)}>
+                                    Join Now
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 )}

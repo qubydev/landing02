@@ -1,4 +1,5 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Intro from './components/Intro'
@@ -7,10 +8,11 @@ import Reviews from './components/Reviews'
 import Footer from './components/Footer'
 import Testimonials from './components/Testimonials'
 import Products from './components/Products'
+import Join from './pages/Join'
 
-export default function App() {
+function Home() {
   return (
-    <div className='scroll-smooth'>
+    <>
       <Navbar />
       <section id="home">
         <Hero />
@@ -33,6 +35,17 @@ export default function App() {
           <Footer />
         </section>
       </div>
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <div className='scroll-smooth'>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/join" element={<Join />} />
+      </Routes>
     </div>
   )
 }
