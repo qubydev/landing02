@@ -3,17 +3,35 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Intro from './components/Intro'
 import WhatYouWillLearn from './components/WhatYouWillLearn'
+import Reviews from './components/Reviews'
+import Footer from './components/Footer'
 import Testimonials from './components/Testimonials'
+import Products from './components/Products'
 
 export default function App() {
   return (
-    <div>
+    <div className='scroll-smooth'>
       <Navbar />
-      <Hero />
+      <section id="home">
+        <Hero />
+      </section>
       <div className='bg-[#040005]'>
-        <Intro />
-        <WhatYouWillLearn />
-        <Testimonials />
+        <section id="about">
+          <Intro />
+          <WhatYouWillLearn />
+        </section>
+        <section id="testimonials">
+          <Testimonials />
+        </section>
+        <section id="reviews">
+          <Reviews />
+        </section>
+        <section id="products">
+          <Products />
+        </section>
+        <section id="contact">
+          <Footer />
+        </section>
       </div>
     </div>
   )

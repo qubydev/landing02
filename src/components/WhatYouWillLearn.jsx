@@ -4,7 +4,7 @@ import GradientText from './ui/custom/gradient-text';
 
 export default function WhatYouWillLearn() {
     return (
-        <div className="p-4 flex items-center justify-center flex-col py-12">
+        <div className="p-4 py-16 flex items-center justify-center flex-col">
             <h3 className='text-3xl font-bold mt-12 mb-4'>
                 What You Will{" "}
                 <GradientText

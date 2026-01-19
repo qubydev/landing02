@@ -1,31 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import GradientText from './ui/custom/gradient-text';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 
 const TESTIMONIALS = [
     {
-        company: 'Powersurge',
-        name: 'Nikolas Ogbona',
-        role: 'Product Designer',
-        quote:
-            "Untitled has been a lifesaver for our team — everything we need is right at our fingertips, and it keeps us jumping right into new design projects.",
-        imageUrl: 'https://example.com/image1.jpg'
+        name: 'Sarah Mitchell',
+        imageUrl: 'https://example.com/sarah.jpg',
+        quote: "This program completely transformed my approach to design. I went from struggling freelancer to landing my dream job in just 3 months.",
+        earnings: '$8,500/month'
     },
     {
-        company: 'Goodwell',
-        name: 'Amar Foley',
-        role: 'UX Designer',
-        quote:
-            "It’s the secret weapon for staying ahead of deadlines. It gives us everything we need to get started quickly.",
-        imageUrl: 'https://example.com/image2.jpg'
+        name: 'James Rodriguez',
+        imageUrl: 'https://example.com/james.jpg',
+        quote: "I never thought I could achieve this level of success. The strategies taught here are pure gold.",
+        earnings: '$12,000/month'
     },
     {
-        company: 'Stacked Lab',
-        name: 'Mathilde Lewis',
-        role: 'Project Lead',
-        quote:
-            "Our workflow has improved dramatically since we started using it. It’s easy to use, and the resources are top-notch. I recommend it to everyone.",
-        imageUrl: 'https://example.com/image3.jpg'
+        name: 'Emily Chen',
+        imageUrl: 'https://example.com/emily.jpg',
+        quote: "From zero clients to a fully booked calendar. This changed everything for me and my family.",
+    },
+    {
+        name: 'Michael Foster',
+        imageUrl: 'https://example.com/michael.jpg',
+        quote: "The best investment I ever made in myself. Results speak louder than words.",
+        earnings: '$15,000/month'
     }
 ];
 
@@ -39,83 +38,94 @@ function initialsFromName(name) {
 }
 
 export default function Testimonials() {
-    return (
-        <section className="relative text-foreground">
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
-            <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-                <div className='flex items-center justify-center'>
-                    <h3 className='text-3xl font-bold mb-4'>
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsTransitioning(true);
+            setTimeout(() => {
+                setCurrentIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+                setIsTransitioning(false);
+            }, 500);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    const testimonial = TESTIMONIALS[currentIndex];
+
+    return (
+        <section className="relative text-foreground py-24 px-4">
+            <div className="mx-auto max-w-4xl">
+                {/* Heading */}
+                <div className="flex items-center justify-center mb-16">
+                    <h3 className="text-3xl font-bold">
                         Our{" "}
                         <GradientText
-                            text="TESTIMONIALS"
+                            text="RESULTS"
                             className="font-bold"
                             gradient="linear-gradient(90deg,var(--color-primary) 39%, #ffffff 49%, var(--color-primary) 58%)"
                         />
                     </h3>
                 </div>
 
-                <div className='flex items-center justify-center flex-wrap gap-4 mt-10'>
-                    <div className='flex flex-col gap-4 relative top-8'>
-                        {TESTIMONIALS.map((testimonial, index) => (
-                            <div key={index} className='p-6 border max-w-72 rounded-xl bg-card'>
-                                <div className='flex items-center gap-4 mb-4'>
-                                    <Avatar
-                                        className={"size-10"}
-                                    >
-                                        <AvatarImage src={testimonial.imageUrl} alt={testimonial.name} />
-                                        <AvatarFallback>{initialsFromName(testimonial.name)}</AvatarFallback>
-                                    </Avatar>
-                                    <div className='flex flex-col'>
-                                        <span className='text-primary'>{testimonial.name}</span>
-                                        <span className='text-xs text-foreground/80'>{testimonial.company}</span>
-                                    </div>
-                                </div>
-                                <p className='text-sm text-foreground/70'>{testimonial.quote}</p>
-                            </div>
-                        ))}
+                {/* Testimonial */}
+                <div
+                    className={`flex flex-col items-center text-center space-y-8 transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'
+                        }`}
+                >
+                    {/* Avatar and Name */}
+                    <div className="flex flex-col items-center space-y-4">
+                        <Avatar className="size-20 border-2 border-primary/30">
+                            <AvatarImage src={testimonial.imageUrl} alt={testimonial.name} />
+                            <AvatarFallback className="text-xl">
+                                {initialsFromName(testimonial.name)}
+                            </AvatarFallback>
+                        </Avatar>
+                        <div className="flex flex-col items-center">
+                            <span className="text-lg font-medium text-primary">
+                                {testimonial.name}
+                            </span>
+                            {testimonial.earnings && (
+                                <span className="text-sm text-green-400 font-semibold mt-1">
+                                    💰 {testimonial.earnings}
+                                </span>
+                            )}
+                        </div>
                     </div>
-                    <div className='flex flex-col gap-4'>
-                        {TESTIMONIALS.map((testimonial, index) => (
-                            <div key={index} className='p-6 border max-w-72 rounded-xl bg-card'>
-                                <div className='flex items-center gap-4 mb-4'>
-                                    <Avatar
-                                        className={"size-10"}
-                                    >
-                                        <AvatarImage src={testimonial.imageUrl} alt={testimonial.name} />
-                                        <AvatarFallback>{initialsFromName(testimonial.name)}</AvatarFallback>
-                                    </Avatar>
-                                    <div className='flex flex-col'>
-                                        <span className='text-primary'>{testimonial.name}</span>
-                                        <span className='text-xs text-foreground/80'>{testimonial.company}</span>
-                                    </div>
-                                </div>
-                                <p className='text-sm text-foreground/70'>{testimonial.quote}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <div className='flex flex-col gap-4 relative top-8'>
-                        {TESTIMONIALS.map((testimonial, index) => (
-                            <div key={index} className='p-6 border max-w-72 rounded-xl bg-card'>
-                                <div className='flex items-center gap-4 mb-4'>
-                                    <Avatar
-                                        className={"size-10"}
-                                    >
-                                        <AvatarImage src={testimonial.imageUrl} alt={testimonial.name} />
-                                        <AvatarFallback>{initialsFromName(testimonial.name)}</AvatarFallback>
-                                    </Avatar>
-                                    <div className='flex flex-col'>
-                                        <span className='text-primary'>{testimonial.name}</span>
-                                        <span className='text-xs text-foreground/80'>{testimonial.company}</span>
-                                    </div>
-                                </div>
-                                <p className='text-sm text-foreground/70'>{testimonial.quote}</p>
-                            </div>
-                        ))}
-                    </div>
+
+                    {/* Quote */}
+                    <blockquote className="max-w-2xl">
+                        <p
+                            className="text-2xl md:text-3xl text-foreground/80 leading-relaxed"
+                            style={{ fontFamily: "'Georgia', 'Times New Roman', serif", fontStyle: 'italic' }}
+                        >
+                            "{testimonial.quote}"
+                        </p>
+                    </blockquote>
                 </div>
 
-                {/* Bottom fade-out gradient */}
-                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-42 bg-gradient-to-t from-background to-transparent" />
+                {/* Dots indicator */}
+                <div className="flex justify-center gap-2 mt-12">
+                    {TESTIMONIALS.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => {
+                                setIsTransitioning(true);
+                                setTimeout(() => {
+                                    setCurrentIndex(index);
+                                    setIsTransitioning(false);
+                                }, 300);
+                            }}
+                            className={`size-2 rounded-full transition-all duration-300 ${index === currentIndex
+                                    ? 'bg-primary w-6'
+                                    : 'bg-foreground/30 hover:bg-foreground/50'
+                                }`}
+                            aria-label={`Go to testimonial ${index + 1}`}
+                        />
+                    ))}
+                </div>
             </div>
         </section>
     );
