@@ -16,9 +16,9 @@ const SOCIALS = [
 
 export default function Intro() {
     return (
-        <div className='p-4 py-16 flex items-center justify-center flex-col gap-4'>
+        <div className='p-4 pb-16 flex items-center justify-center flex-col gap-4'>
             <div className='flex flex-col items-center justify-center'>
-                <h3 className='text-foreground/80'>Teaching my</h3>
+                <h3 className='text-foreground/80 text-lg'>Teaching my</h3>
                 <h2 className='text-2xl md:text-4xl text-center mb-2 flex items-center justify-center flex-wrap px-4 font-bold'>
                     <span>
                         <GradientText
