@@ -21,9 +21,6 @@ const REVIEWS = [
                 "This community changed the way I think about money. Clear, practical, and powerful.",
             rating: 5
         },
-    ],
-    // Column 2
-    [
         {
             name: 'Rahul',
             role: 'Member',
@@ -38,9 +35,6 @@ const REVIEWS = [
                 "The way concepts are explained here is very different. You don't just learn what to do, you learn how successful people actually think. It has helped me improve both my financial planning and business mindset.",
             rating: 5
         },
-    ],
-    // Column 3
-    [
         {
             name: 'Deepika',
             role: 'Member',
@@ -105,7 +99,7 @@ export default function Reviews() {
             <div className='relative'>
                 <div className='flex items-center justify-center h-140 overflow-hidden mt-20'>
 
-                    <Marquee vertical pauseOnHover className={"p-2 hidden min-[1064px]:flex [--duration:10s]"}>
+                    <Marquee vertical pauseOnHover className={"p-2 hidden min-[1064px]:flex [--duration:15s]"}>
                         {REVIEWS[0].map((review, index) => (
                             <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
@@ -126,8 +120,8 @@ export default function Reviews() {
                         ))}
                     </Marquee>
 
-                    <Marquee vertical pauseOnHover reverse className={"p-2 [--duration:10s]"}>
-                        {REVIEWS[1].map((review, index) => (
+                    <Marquee vertical pauseOnHover reverse className={"p-2 [--duration:15s]"}>
+                        {REVIEWS[0].map((review, index) => (
                             <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
                                     <Avatar
@@ -147,8 +141,8 @@ export default function Reviews() {
                         ))}
                     </Marquee>
 
-                    <Marquee vertical pauseOnHover className={"p-2 hidden min-[760px]:flex [--duration:10s]"}>
-                        {REVIEWS[2].map((review, index) => (
+                    <Marquee vertical pauseOnHover className={"p-2 hidden min-[760px]:flex [--duration:15s]"}>
+                        {REVIEWS[0].map((review, index) => (
                             <div key={index} className='p-6 border w-[90vw] max-w-80 rounded-xl bg-card'>
                                 <div className='flex items-center gap-4 mb-4'>
                                     <Avatar
