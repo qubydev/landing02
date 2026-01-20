@@ -34,7 +34,7 @@ const PRODUCTS = [
             { label: 'Best Sales Tactics', desc: 'Make a ton of money properly', icon: FaLightbulb },
         ],
         originalPrice: '₹1,299',
-        price: '₹199',
+        price: '₹149',
     },
 ]
 
@@ -77,10 +77,7 @@ export default function Products() {
                     {PRODUCTS.map((product, index) => (
                         <div
                             key={index}
-                            className={`relative flex flex-col p-8 rounded-2xl border max-w-sm w-full ${product.popular
-                                ? 'border-primary bg-primary/5'
-                                : 'border-foreground/20 bg-card'
-                                }`}
+                            className={"relative flex flex-col p-8 rounded-2xl border max-w-sm w-full border-primary bg-primary/5"}
                         >
                             {product.popular && (
                                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">

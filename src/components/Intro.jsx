@@ -30,7 +30,7 @@ export default function Intro() {
                     <span>in 3 months!</span>
                 </h2>
                 <div className='text-center text-sm text-foreground/80'>
-                    <p>Wealth has a huge language, it's time you learn to speak it.</p>
+                    <p>Wealth has a language, it's time you learn to speak it.</p>
                     <p>The 1% don't chase money, they command it!</p>
                 </div>
             </div>
@@ -59,7 +59,7 @@ export default function Intro() {
                     </Avatar>
                 </div>
                 <p className='text-center font-bold text-lg mt-2'>
-                    <span className='text-primary'>150+</span>{" "}
+                    <span className='text-primary'>1500+</span>{" "}
                     <span className='text-foreground/70'>Trusted members</span>
                 </p>
             </div>
