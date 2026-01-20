@@ -28,7 +28,7 @@ export default function Navbar() {
             <div className='flex-1 max-w-5xl'>
                 <nav className='flex items-center justify-between rounded-2xl bg-background/5 backdrop-blur-md border py-2 pl-6 pr-3'>
                     <Link to="/">
-                        <h1 className='font-bold text-lg'>The Wealth Speaks</h1>
+                        <h1 className='font-bold text-lg'>The Wealth Speaks Club</h1>
                     </Link>
 
                     {/* Desktop Navigation */}

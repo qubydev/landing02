@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 import Testimonials from './components/Testimonials'
 import Products from './components/Products'
 import Join from './pages/Join'
-import Ebook from './components/Ebook'
+import Ebook from './pages/Ebook'
 
 function Home() {
   return (
@@ -32,9 +32,6 @@ function Home() {
         <section id="products">
           <Products />
         </section>
-        <section id="ebook">
-          <Ebook />
-        </section>
         <section id="contact">
           <Footer />
         </section>
@@ -49,6 +46,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/join" element={<Join />} />
+        <Route path="/ebook" element={<Ebook />} />
       </Routes>
     </div>
   )

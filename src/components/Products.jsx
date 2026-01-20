@@ -6,38 +6,6 @@ import { Button } from './ui/button'
 import { FaBrain, FaLightbulb, FaRoad, FaUsers } from 'react-icons/fa'
 import { FancyButton } from './ui/custom/fancy-button'
 
-const PRODUCTS = [
-    {
-        popular: true,
-        title: 'Premium Community',
-        subtitle: 'A community to connect and learn with like-minded people.',
-        offer: 'Unlock bonus worth ₹75,199 including all future upgrades at zero cost!',
-        features: [
-            { label: 'Wealth Mindset', desc: 'Learn how successful people think and make decisions', icon: FaBrain },
-            { label: 'Power Principles', desc: 'Master the hidden laws of influence and success', icon: FaLightbulb },
-            { label: 'Personal Roadmap', desc: 'Customized path tailored to your goals', icon: FaRoad },
-            { label: 'Community Access', desc: 'Network with like-minded individuals', icon: FaUsers },
-        ],
-        originalPrice: '₹31,597',
-        price: '₹799',
-    },
-    {
-        popular: false,
-        title: 'E-Book',
-        subtitle: 'THE ART OF LIFEMAXING',
-        description: 'A No-Nonsense Guide to Building Elite Status and Wealth',
-        features: [
-            { label: 'The Ultimate Guide', desc: 'Looking good, feeling great, and getting rich', icon: FaBrain },
-            { label: 'Hidden Secrets', desc: 'Gain power and influence nobody talks about', icon: FaLightbulb },
-            { label: 'Free Bonuses', desc: 'Worth ₹15,199 including all future upgrades at zero cost', icon: FaRoad },
-            { label: 'Comprehensive eBook', desc: '45 pages + Master The Art of Sales (Free eBook)', icon: FaUsers },
-            { label: 'Best Sales Tactics', desc: 'Make a ton of money properly', icon: FaLightbulb },
-        ],
-        originalPrice: '₹1,299',
-        price: '₹149',
-    },
-]
-
 export default function Products() {
 
     const handleNavClick = (e, to) => {
@@ -83,87 +51,156 @@ export default function Products() {
                 </p>
 
                 <div className="flex flex-wrap items-stretch justify-center gap-8">
-                    {PRODUCTS.map((product, index) => (
-                        <div
-                            key={index}
-                            className={`relative flex flex-col p-8 rounded-2xl border max-w-sm w-full ${product.popular
-                                ? 'border-primary bg-primary/5'
-                                : 'border-foreground/20 bg-card'
-                                }`}
-                        >
-                            {product.popular && (
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                                    <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                                        POPULAR
-                                    </span>
-                                </div>
-                            )}
 
-                            <div className="mb-6">
-                                <h4 className="text-2xl font-bold text-primary mb-2">
-                                    {product.title}
-                                </h4>
-                                {product.subtitle && (
-                                    <p className="text-sm font-semibold text-foreground/90">
-                                        {product.subtitle}
-                                    </p>
-                                )}
-                                {product.description && (
-                                    <p className="text-sm text-foreground/60 mt-1">
-                                        {product.description}
-                                    </p>
-                                )}
-                            </div>
-
-                            {product.offer && (
-                                <div className="mb-6 rounded-xl p-3 text-sm font-semibold text-primary shimmer">
-                                    {product.offer}
-                                </div>
-                            )}
-
-                            <div className="flex-1 space-y-4 mb-8">
-                                {product.features.map((feature, idx) => (
-                                    <div key={idx} className="flex items-start gap-3">
-                                        <feature.icon className="text-primary mt-1 flex-shrink-0 size-4" />
-                                        <div>
-                                            <span className="font-semibold text-foreground">
-                                                {feature.label}
-                                            </span>
-                                            <span className="text-foreground/60"> - {feature.desc}</span>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="mb-6">
-                                <div className="flex items-baseline gap-3">
-                                    <span className="text-foreground/50 line-through text-lg">
-                                        {product.originalPrice}
-                                    </span>
-                                    <span className="text-4xl font-bold text-primary">
-                                        {product.price}
-                                    </span>
-                                </div>
-                            </div>
-
-                            {product.popular ? (
-                                <Link to={product.popular ? "/join" : "#ebook"} className="w-full">
-                                    <FancyButton className="w-full rounded-full font-semibold py-3">
-                                        JOIN NOW
-                                    </FancyButton>
-                                </Link>
-                            ) : (
-                                <Button
-                                    size="xl"
-                                    className="w-full rounded-full font-semibold bg-foreground/10 hover:bg-foreground/20 text-foreground"
-                                    variant="ghost"
-                                    onClick={(e) => handleNavClick(e, '#ebook')}
-                                >
-                                    GET NOW
-                                </Button>
-                            )}
+                    <div className="relative flex flex-col p-8 rounded-2xl border max-w-sm w-full border-primary bg-primary/5">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                            <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                                POPULAR
+                            </span>
                         </div>
-                    ))}
+
+                        <div className="mb-6">
+                            <h4 className="text-2xl font-bold text-primary mb-2">
+                                Premium Community
+                            </h4>
+                            <p className="text-sm font-semibold text-foreground/90">
+                                A community to connect and learn with like-minded people.
+                            </p>
+                        </div>
+
+                        <div className="mb-6 rounded-xl p-3 text-sm font-semibold text-primary shimmer">
+                            Unlock bonus worth ₹75,199 including all future upgrades at zero cost!
+                        </div>
+
+                        <div className="flex-1 space-y-4 mb-8">
+                            <div className="flex items-start gap-3">
+                                <FaBrain className="text-primary mt-1 flex-shrink-0 size-4" />
+                                <div>
+                                    <span className="font-semibold text-foreground">Wealth Mindset</span>
+                                    <span className="text-foreground/60"> - Learn how successful people think and make decisions</span>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-3">
+                                <FaLightbulb className="text-primary mt-1 flex-shrink-0 size-4" />
+                                <div>
+                                    <span className="font-semibold text-foreground">Power Principles</span>
+                                    <span className="text-foreground/60"> - Master the hidden laws of influence and success</span>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-3">
+                                <FaRoad className="text-primary mt-1 flex-shrink-0 size-4" />
+                                <div>
+                                    <span className="font-semibold text-foreground">Personal Roadmap</span>
+                                    <span className="text-foreground/60"> - Customized path tailored to your goals</span>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-3">
+                                <FaUsers className="text-primary mt-1 flex-shrink-0 size-4" />
+                                <div>
+                                    <span className="font-semibold text-foreground">Community Access</span>
+                                    <span className="text-foreground/60"> - Network with like-minded individuals</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mb-6">
+                            <div className="flex items-baseline gap-3">
+                                <span className="text-foreground/50 line-through text-lg">
+                                    ₹31,597
+                                </span>
+                                <span className="text-4xl font-bold text-primary">
+                                    ₹799
+                                </span>
+                            </div>
+                        </div>
+
+                        <Link to="/join" className="w-full">
+                            <FancyButton className="w-full rounded-full font-semibold py-3">
+                                JOIN NOW
+                            </FancyButton>
+                        </Link>
+                    </div>
+
+                    <div className="relative flex flex-col p-8 rounded-2xl border max-w-sm w-full border-foreground/20 bg-card">
+                        <div className="mb-6">
+                            <h4 className="text-2xl font-bold text-primary mb-2">
+                                E-Book
+                            </h4>
+                            <p className="text-sm font-semibold text-foreground/90">
+                                THE ART OF LIFEMAXING
+                            </p>
+                            <p className="text-sm text-foreground/60 mt-1">
+                                A No-Nonsense Guide to Building Elite Status and Wealth
+                            </p>
+                        </div>
+
+                        <div className="flex-1 space-y-4 mb-8">
+                            <div className="flex items-start gap-3">
+                                <FaBrain className="text-primary mt-1 flex-shrink-0 size-4" />
+                                <div>
+                                    <span className="font-semibold text-foreground">The Ultimate Guide</span>
+                                    <span className="text-foreground/60"> - Looking good, feeling great, and getting rich</span>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-3">
+                                <FaLightbulb className="text-primary mt-1 flex-shrink-0 size-4" />
+                                <div>
+                                    <span className="font-semibold text-foreground">Hidden Secrets</span>
+                                    <span className="text-foreground/60"> - Gain power and influence nobody talks about</span>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-3">
+                                <FaRoad className="text-primary mt-1 flex-shrink-0 size-4" />
+                                <div>
+                                    <span className="font-semibold text-foreground">Free Bonuses</span>
+                                    <span className="text-foreground/60"> - Worth ₹15,199 including all future upgrades at zero cost</span>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-3">
+                                <FaUsers className="text-primary mt-1 flex-shrink-0 size-4" />
+                                <div>
+                                    <span className="font-semibold text-foreground">Comprehensive eBook</span>
+                                    <span className="text-foreground/60"> - 45 pages + Master The Art of Sales (Free eBook)</span>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-3">
+                                <FaLightbulb className="text-primary mt-1 flex-shrink-0 size-4" />
+                                <div>
+                                    <span className="font-semibold text-foreground">Best Sales Tactics</span>
+                                    <span className="text-foreground/60"> - Make a ton of money properly</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mb-6">
+                            <div className="flex items-baseline gap-3">
+                                <span className="text-foreground/50 line-through text-lg">
+                                    ₹1,299
+                                </span>
+                                <span className="text-4xl font-bold text-primary">
+                                    ₹149
+                                </span>
+                            </div>
+                        </div>
+
+                        <Link to="/ebook" className="w-full">
+                            <Button
+                                size="xl"
+                                className="w-full rounded-full font-semibold bg-foreground/10 hover:bg-foreground/20 text-foreground"
+                                variant="ghost"
+                            >
+                                GET NOW
+                            </Button>
+                        </Link>
+                    </div>
+
                 </div>
             </div>
         </section>
