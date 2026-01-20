@@ -69,8 +69,8 @@ export default function Hero() {
                     </div>
                     <div className='py-6 flex flex-col items-center justify-center gap-6'>
                         <p className='flex items-center justify-center flex-col text-foreground/80 text-center text-sm md:text-base'>
-                            <span>This is where knowledge meets execution.</span>
-                            <span>From learning to Earning!</span>
+                            <span className='text-lg text-foreground'>Enter The Wealth Circle</span>
+                            <span className='text-sm text-foreground/70'>Lifetime Access • Premium Guidance</span>
                         </p>
                         <Link to="/join">
                             <FancyButton className={"rounded-full text-lg px-12 md:px-20 py-3"}>Join Now</FancyButton>

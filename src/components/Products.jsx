@@ -39,6 +39,15 @@ const PRODUCTS = [
 ]
 
 export default function Products() {
+
+    const handleNavClick = (e, to) => {
+        e.preventDefault()
+        const element = document.querySelector(to)
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
+
     return (
         <section className="relative text-foreground py-24 px-4">
             <style>{`
@@ -77,7 +86,10 @@ export default function Products() {
                     {PRODUCTS.map((product, index) => (
                         <div
                             key={index}
-                            className={"relative flex flex-col p-8 rounded-2xl border max-w-sm w-full border-primary bg-primary/5"}
+                            className={`relative flex flex-col p-8 rounded-2xl border max-w-sm w-full ${product.popular
+                                ? 'border-primary bg-primary/5'
+                                : 'border-foreground/20 bg-card'
+                                }`}
                         >
                             {product.popular && (
                                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -134,21 +146,22 @@ export default function Products() {
                                 </div>
                             </div>
 
-                            <Link to="/join" className="w-full">
-                                {product.popular ? (
+                            {product.popular ? (
+                                <Link to={product.popular ? "/join" : "#ebook"} className="w-full">
                                     <FancyButton className="w-full rounded-full font-semibold py-3">
                                         JOIN NOW
                                     </FancyButton>
-                                ) : (
-                                    <Button
-                                        size="xl"
-                                        className="w-full rounded-full font-semibold bg-foreground/10 hover:bg-foreground/20 text-foreground"
-                                        variant="ghost"
-                                    >
-                                        JOIN NOW
-                                    </Button>
-                                )}
-                            </Link>
+                                </Link>
+                            ) : (
+                                <Button
+                                    size="xl"
+                                    className="w-full rounded-full font-semibold bg-foreground/10 hover:bg-foreground/20 text-foreground"
+                                    variant="ghost"
+                                    onClick={(e) => handleNavClick(e, '#ebook')}
+                                >
+                                    GET NOW
+                                </Button>
+                            )}
                         </div>
                     ))}
                 </div>

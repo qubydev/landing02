@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import Testimonials from './components/Testimonials'
 import Products from './components/Products'
 import Join from './pages/Join'
+import Ebook from './components/Ebook'
 
 function Home() {
   return (
@@ -30,6 +31,9 @@ function Home() {
         </section>
         <section id="products">
           <Products />
+        </section>
+        <section id="ebook">
+          <Ebook />
         </section>
         <section id="contact">
           <Footer />
