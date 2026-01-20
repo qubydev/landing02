@@ -137,6 +137,12 @@ export default function Products() {
                             </p>
                         </div>
 
+                        <img
+                            alt="Ebook Cover"
+                            src="/ebook1.jpg"
+                            className='w-full max-w-[180px] mx-auto mb-6 border-2'
+                        />
+
                         <div className="flex-1 space-y-4 mb-8">
                             <div className="flex items-start gap-3">
                                 <FaBrain className="text-primary mt-1 flex-shrink-0 size-4" />
