@@ -124,7 +124,7 @@ export default function Products() {
                         </Link>
                     </div>
 
-                    <div className="relative flex flex-col p-8 rounded-2xl border max-w-sm w-full border-foreground/20 bg-card">
+                    <div id="ebook" className="relative flex flex-col p-8 rounded-2xl border max-w-sm w-full bg-card border-primary">
                         <div className="mb-6">
                             <h4 className="text-2xl font-bold text-primary mb-2">
                                 E-Book
@@ -197,13 +197,9 @@ export default function Products() {
                         </div>
 
                         <Link to="/ebook" className="w-full">
-                            <Button
-                                size="xl"
-                                className="w-full rounded-full font-semibold bg-foreground/10 hover:bg-foreground/20 text-foreground"
-                                variant="ghost"
-                            >
+                            <FancyButton className="w-full rounded-full font-semibold py-3">
                                 GET NOW
-                            </Button>
+                            </FancyButton>
                         </Link>
                     </div>
 

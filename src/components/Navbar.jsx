@@ -12,6 +12,7 @@ export default function Navbar() {
         { to: "#testimonials", label: "Testimonials" },
         { to: "#reviews", label: "Reviews" },
         { to: "#products", label: "Products" },
+        { to: "#ebook", label: "E-Book" },
     ]
 
     const handleNavClick = (e, to) => {
