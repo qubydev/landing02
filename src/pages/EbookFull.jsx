@@ -5,7 +5,7 @@ import { FancyButton } from '@/components/ui/custom/fancy-button'
 
 export default function EbookFull() {
     return (
-        <section className="relative text-foreground py-24 px-4">
+        <section className="relative text-foreground p-4 md:pt-16">
             <div className="mx-auto max-w-4xl">
                 <div className="flex flex-col md:flex-row items-stretch gap-8 border border-primary rounded-2xl bg-card p-8">
                     <div className="flex flex-1 items-center justify-center">
