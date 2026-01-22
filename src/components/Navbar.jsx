@@ -1,22 +1,30 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Button } from './ui/button'
 import { HiMenu } from 'react-icons/hi'
 import { IoClose } from 'react-icons/io5'
 
 export default function Navbar() {
     const [open, setOpen] = useState(false)
+    const navigate = useNavigate()
 
     const navLinks = [
         { to: "#about", label: "About Us" },
         { to: "#testimonials", label: "Testimonials" },
         { to: "#reviews", label: "Reviews" },
         { to: "#products", label: "Products" },
-        { to: "#ebook", label: "E-Book" },
+        { to: "/ebook", label: "E-Book" },
     ]
 
     const handleNavClick = (e, to) => {
-        e.preventDefault()
+        e.preventDefault();
+
+        if (to.startsWith('/')) {
+            setOpen(false)
+            navigate(to)
+            return
+        }
+
         const element = document.querySelector(to)
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' })

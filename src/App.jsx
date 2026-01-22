@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonials'
 import Products from './components/Products'
 import Join from './pages/Join'
 import Ebook from './pages/Ebook'
+import EbookFull from './pages/EbookFull'
 
 function Home() {
   return (
@@ -46,7 +47,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/join" element={<Join />} />
-        <Route path="/ebook" element={<Ebook />} />
+        <Route path="/ebook" element={<EbookFull />} />
+        <Route path="/ebook-payment" element={<Ebook />} />
       </Routes>
     </div>
   )

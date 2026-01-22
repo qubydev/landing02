@@ -196,7 +196,7 @@ export default function Products() {
                             </div>
                         </div>
 
-                        <Link to="/ebook" className="w-full">
+                        <Link to="/ebook-payment" className="w-full">
                             <FancyButton className="w-full rounded-full font-semibold py-3">
                                 GET NOW
                             </FancyButton>
