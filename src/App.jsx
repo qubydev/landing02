@@ -1,5 +1,5 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Intro from './components/Intro'
@@ -12,6 +12,21 @@ import Join from './pages/Join'
 import Ebook from './pages/Ebook'
 import EbookFull from './pages/EbookFull'
 
+function ScrollToHash() {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }, [hash])
+
+  return null
+}
+
 function Home() {
   return (
     <>
@@ -19,7 +34,7 @@ function Home() {
       <section id="home">
         <Hero />
       </section>
-      <div className='bg-[#040005]'>
+      <div className="bg-[#040005]">
         <section id="about">
           <Intro />
           <WhatYouWillLearn />
@@ -43,7 +58,8 @@ function Home() {
 
 export default function App() {
   return (
-    <div className='scroll-smooth'>
+    <div className="scroll-smooth">
+      <ScrollToHash />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/join" element={<Join />} />

@@ -8,14 +8,6 @@ import { FancyButton } from './ui/custom/fancy-button'
 
 export default function Products() {
 
-    const handleNavClick = (e, to) => {
-        e.preventDefault()
-        const element = document.querySelector(to)
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' })
-        }
-    }
-
     return (
         <section className="relative text-foreground py-24 px-4">
             <style>{`

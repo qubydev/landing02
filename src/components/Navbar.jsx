@@ -9,10 +9,10 @@ export default function Navbar() {
     const navigate = useNavigate()
 
     const navLinks = [
-        { to: "#about", label: "About Us" },
-        { to: "#testimonials", label: "Testimonials" },
-        { to: "#reviews", label: "Reviews" },
-        { to: "#products", label: "Products" },
+        { to: "/#about", label: "About Us" },
+        { to: "/#testimonials", label: "Testimonials" },
+        { to: "/#reviews", label: "Reviews" },
+        { to: "/#products", label: "Products" },
         { to: "/ebook", label: "E-Book" },
     ]
 
