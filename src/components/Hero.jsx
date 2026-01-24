@@ -65,6 +65,27 @@ export default function Hero() {
                                 muted
                                 className="h-28 md:h-40 shadow-lg border border-white/10"
                             />
+                            <video
+                                src="/clip5.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                className="h-28 md:h-40 shadow-lg border border-white/10"
+                            />
+                            <video
+                                src="/clip6.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                className="h-28 md:h-40 shadow-lg border border-white/10"
+                            />
+                            <video
+                                src="/clip7.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                className="h-28 md:h-40 shadow-lg border border-white/10"
+                            />
                         </Marquee>
                     </div>
                     <div className='py-6 flex flex-col items-center justify-center gap-2'>
