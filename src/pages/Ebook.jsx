@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { FancyButton } from '@/components/ui/custom/fancy-button';
+import { Link } from 'react-router-dom';
 
 export default function Ebook() {
     const [showQrPopup, setShowQrPopup] = useState(false);
@@ -63,13 +64,14 @@ export default function Ebook() {
                             </p>
                         </div>
                     </div>
-
-                    <FancyButton
-                        size="lg"
-                        className="w-full rounded-full font-semibold py-4"
-                    >
-                        Continue to Payment
-                    </FancyButton>
+                    <a href="https://tally.so/r/eqaYok" target="_blank" rel="noopener noreferrer">
+                        <FancyButton
+                            size="lg"
+                            className="w-full rounded-full font-semibold py-4"
+                        >
+                            Continue to Payment
+                        </FancyButton>
+                    </a>
 
                     <p className="text-center text-muted-foreground text-sm mt-2">
                         If you have already paid, click continue
